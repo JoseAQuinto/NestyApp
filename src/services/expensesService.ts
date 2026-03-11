@@ -1,5 +1,5 @@
 import { supabase } from './supabase';
-import type { CreateExpenseDto, Expense } from '../features/expenses/types/expense.types';
+import type { CreateExpenseDto, Expense } from '../features/sharedGroups/types/expense.types';
 
 export const expensesService = {
   async getExpenses(): Promise<Expense[]> {

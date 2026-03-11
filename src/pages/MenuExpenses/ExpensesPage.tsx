@@ -5,7 +5,7 @@ import Button from '../../components/ui/Button';
 import ExpenseEmptyState from '../../features/expenses/components/ExpenseEmptyState';
 import ExpenseItem from '../../features/expenses/components/ExpenseItem';
 import ExpenseSummaryCard from '../../features/expenses/components/ExpenseSummaryCard';
-import type { Expense } from '../../features/expenses/types/expense.types';
+import type { Expense } from '../../features/sharedGroups/types/expense.types';
 import { expensesService } from '../../services/expensesService';
 
 const formatExpenseDate = (value: string) => {

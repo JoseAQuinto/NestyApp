@@ -11,6 +11,8 @@ import JoinSharedGroupPage from './pages/MenuSharedGroups/JoinSharedGroupPage';
 import NewSharedGroupPage from './pages/MenuSharedGroups/NewSharedGroupPage';
 import SharedGroupDetailPage from './pages/MenuSharedGroups/SharedGroupDetailPage';
 import SharedGroupsPage from './pages/MenuSharedGroups/SharedGroupsPage';
+import NewSharedExpensePage from './pages/MenuSharedExpense/NewSharedExpensePage';
+import RegisterPage from './pages/auth/RegisterPage';
 
 function App() {
   const { session, loading } = useAuth();
@@ -36,83 +38,98 @@ function App() {
       <Route
         path="/home"
         element={
-          <ProtectedRoute>
-            <HomePage />
-          </ProtectedRoute>
+          // <ProtectedRoute>
+          <HomePage />
+          // </ProtectedRoute>
         }
       />
 
       <Route
         path="/expenses"
         element={
-          <ProtectedRoute>
-            <ExpensesPage />
-          </ProtectedRoute>
+          // <ProtectedRoute>
+          <ExpensesPage />
+          // </ProtectedRoute>
         }
       />
 
       <Route
         path="/profile"
         element={
-          <ProtectedRoute>
-            <ProfilePage />
-          </ProtectedRoute>
+          // <ProtectedRoute>
+          <ProfilePage />
+          // </ProtectedRoute>
         }
       />
 
       <Route
         path="/expenses/new"
         element={
-          <ProtectedRoute>
-            <NewExpensePage />
-          </ProtectedRoute>
+          // <ProtectedRoute>
+          <NewExpensePage />
+          // </ProtectedRoute>
         }
       />
 
       <Route
         path="/shared-groups"
         element={
-          <ProtectedRoute>
-            <SharedGroupsPage />
-          </ProtectedRoute>
+          // <ProtectedRoute>
+          <SharedGroupsPage />
+          // </ProtectedRoute>
         }
       />
 
       <Route
         path="/shared-groups/new"
         element={
-          <ProtectedRoute>
-            <NewSharedGroupPage />
-          </ProtectedRoute>
+          // <ProtectedRoute>
+          <NewSharedGroupPage />
+          // </ProtectedRoute>
         }
       />
 
       <Route
         path="/shared-groups/:groupId"
         element={
-          <ProtectedRoute>
-            <SharedGroupDetailPage />
-          </ProtectedRoute>
+          // <ProtectedRoute>
+          <SharedGroupDetailPage />
+          // </ProtectedRoute>
         }
       />
 
       <Route
         path="/shared-groups/:groupId/invite"
         element={
-          <ProtectedRoute>
-            <InviteMembersPage />
-          </ProtectedRoute>
+          // <ProtectedRoute>
+          <InviteMembersPage />
+          // </ProtectedRoute>
         }
       />
 
       <Route
         path="/join-group"
         element={
-          <ProtectedRoute>
-            <JoinSharedGroupPage />
-          </ProtectedRoute>
+          // <ProtectedRoute>
+          <JoinSharedGroupPage />
+          // </ProtectedRoute>
         }
       />
+
+      <Route
+        path="/shared-groups/:groupId/expenses/new"
+        element={
+          // <ProtectedRoute>
+          <NewSharedExpensePage />
+          // </ProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/register"
+        element={session ? <Navigate to="/home" replace /> : <RegisterPage />}
+      />
+
     </Routes>
   );
 }
